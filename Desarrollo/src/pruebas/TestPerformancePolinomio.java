@@ -4,7 +4,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import tpComplejidad.Polinomio;
@@ -12,7 +11,7 @@ import tpComplejidad.Polinomio;
 public class TestPerformancePolinomio {
 	
 	@Test
-	public void performanceMSucesivas() throws Exception {
+	public void performancePolinomio() throws Exception {
 		Random r = new Random();
 		Polinomio p;
 		double[] coef;
