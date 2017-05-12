@@ -33,12 +33,8 @@ public class Polinomio {
 	 */
 	public double evaluarMSucesivas(double x) {
 		double resultado = 0;
-		for (int i = 0; i < coeficientes.length; i++) {
-			double xn = 1.0;
-			for (int j = 0; j < grado - i; j++) {
-				xn *= x; // x elevado a la n
-			}
-			resultado += (xn * coeficientes[i]);
+		for (int i = 0; i <= grado; i++) {
+			resultado += (Potencia.porMSucesivas(x, grado - i) * coeficientes[i]);
 		}
 		return resultado;
 	}
