@@ -34,5 +34,19 @@ public class BinomioDeNewton {
 				Potencia.porRecursividadParImpar(b,n- k);
 	}
 	
+	/**
+	 * Obtención de término k usando mat
+	 * @param n
+	 * @param a
+	 * @param b
+	 * @param k
+	 * @return
+	 */
+	public static double coefUsandoMat(int n, double a, double b,int k){
+		return NumCombinatorio.usandoMat(n, k)*
+				Potencia.porRecursividadParImpar(a, k)*
+				Potencia.porRecursividadParImpar(b,n- k);
+	}
+	
 	
 }
