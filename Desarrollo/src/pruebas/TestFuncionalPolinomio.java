@@ -97,5 +97,19 @@ public class TestFuncionalPolinomio {
 		Assert.assertEquals(111, p.evaluarProgDinamica(6), 0);
 		Assert.assertEquals(143, p.evaluarProgDinamica(7), 0);
 	}
+	
+	@Test
+	public void testEvaluarMejorada() throws Exception {
+		double[] coef = {2, 6, 3};
+		Polinomio p = new Polinomio(coef);
+		
+		Assert.assertEquals(11, p.evaluarMejorada(1), 0);
+		Assert.assertEquals(23, p.evaluarMejorada(2), 0);
+		Assert.assertEquals(39, p.evaluarMejorada(3), 0);
+		Assert.assertEquals(59, p.evaluarMejorada(4), 0);
+		Assert.assertEquals(83, p.evaluarMejorada(5), 0);
+		Assert.assertEquals(111, p.evaluarMejorada(6), 0);
+		Assert.assertEquals(143, p.evaluarMejorada(7), 0);
+	}
 
 }
