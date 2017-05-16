@@ -26,12 +26,13 @@ public class TestPerformancePolinomio {
 			double x = 10.68;
 			
 			System.out.println(p.getGrado()  + "\t" + 
-					getTimeMSucesivas(p, x)  + "\t" + 
+					getTimeMSucesivas(p,x)   + "\t" + 
 					getTimeRecursiva(p,x)    + "\t" +
 					getTimeRecursivaPar(p,x) + "\t" +
 					getTimeProgDinamica(p,x) + "\t" +
 					getTimePow(p,x)          + "\t" +
-					getTimeHorner(p,x));
+					getTimeHorner(p,x)       + "\t" +
+					getTimeMejorada(p,x));
 		}
 	}
 	
@@ -59,6 +60,13 @@ public class TestPerformancePolinomio {
 	private double getTimeProgDinamica(Polinomio p, double x) {
 		Calendar tIni = new GregorianCalendar();
 		p.evaluarProgDinamica(x);
+		Calendar tFin = new GregorianCalendar();
+		return tFin.getTimeInMillis() - tIni.getTimeInMillis();
+	}
+	
+	private double getTimeMejorada(Polinomio p, double x) {
+		Calendar tIni = new GregorianCalendar();
+		p.evaluarMejorada(x);
 		Calendar tFin = new GregorianCalendar();
 		return tFin.getTimeInMillis() - tIni.getTimeInMillis();
 	}

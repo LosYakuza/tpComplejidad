@@ -68,7 +68,7 @@ public class Polinomio {
 	}
 
 	/**
-	 * Se calculan las potencias mediante p
+	 * Se calculan las potencias mediante programación dinámica
 	 * @param x
 	 * @return
 	 */
@@ -85,8 +85,21 @@ public class Polinomio {
 		return result; 
 	}
 
+	/**
+	 * Se calculan las potencias mediante programación dinámica con mejora en el uso de memoria
+	 * @param x
+	 * @return
+	 */
 	public double evaluarMejorada(final double x) {
-		return 0;
+		int xn = 1;
+		double result = 0;
+		for (int i = 0; i <= grado; i++) {
+			if(i > 0) {
+				xn *= x;
+			}
+			result += coeficientes[grado - i] * xn;
+		}
+		return result; 
 	}
 	
 	public double evaluarPow(final double x) {
